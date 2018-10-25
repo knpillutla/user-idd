@@ -14,23 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class UserCreationRequestDTO extends WMSRequestDTO{
-	String busName;
-	Integer defLocnNbr;
+public class UserLoginInRequestDTO extends WMSRequestDTO{
 	String userName;
-	String authType;
 	String authToken;
-	String firstName;
-	String lastName;
-	String middleName;
-	String roleName;
-	String addr1;
-	String addr2;
-	String addr3;
-	String city;
-	String State;
-	String country;
-	String zipCode;
-	String locale;
-	String userId;
 }

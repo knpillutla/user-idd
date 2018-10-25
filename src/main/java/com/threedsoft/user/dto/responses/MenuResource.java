@@ -18,5 +18,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MenuResource {
 	String menuName;
-	List<ScreenResource> screenResourceList = new ArrayList();
+	List<ScreenResource> screenResourceList;
 }

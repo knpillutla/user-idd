@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 @NoArgsConstructor
 @Data
-public class UserCreatedEvent extends WMSEvent {
+public class UserLogInEvent extends WMSEvent {
 
-	public UserCreatedEvent(UserResourceDTO resourceDTO, String serviceName) {
+	public UserLogInEvent(UserResourceDTO resourceDTO, String serviceName) {
 		this(resourceDTO, serviceName, null);
 	}
 
-	public UserCreatedEvent(UserResourceDTO resourceDTO, String serviceName, Map headerMap) {
-		super("UserCreatedEvent", resourceDTO.getBusName(), resourceDTO.getDefLocnNbr(), "",
+	public UserLogInEvent(UserResourceDTO resourceDTO, String serviceName, Map headerMap) {
+		super("UserLogInEvent", resourceDTO.getBusName(), resourceDTO.getDefLocnNbr(), "",
 				"", "", "User", resourceDTO.getUserName(),
 				serviceName, resourceDTO);
 		if (headerMap != null)

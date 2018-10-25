@@ -21,7 +21,7 @@ public class UserResourceDTO  extends WMSResourceDTO{
 	Long id;
 	String busName;
 	Integer defLocnNbr;
-	String loginUserId;
+	String userName;
 	String authType;
 	String firstName;
 	String lastName;
@@ -36,5 +36,5 @@ public class UserResourceDTO  extends WMSResourceDTO{
 	String zipCode;
 	String locale;
 	String userId;
-	List<MenuResource> menuResourceList = new ArrayList();
+	List<MenuResource> menuResourceList;
 }

@@ -22,9 +22,9 @@ public class ScreenResource {
 	String recordUrl;
 	String updateUrl;
 	String deleteUrl;
-	List<SearchFieldResource> searchFieldList = new ArrayList();
-	List<String> displayFieldList = new ArrayList();
-	List<String> detailFieldList = new ArrayList();
-	List<String> createFieldList = new ArrayList();
-	List<String> updateFieldList = new ArrayList();
+	List<SearchFieldResource> searchFieldList;
+	List<String> displayFieldList;
+	List<String> detailFieldList;
+	List<String> createFieldList;
+	List<String> updateFieldList;
 }
