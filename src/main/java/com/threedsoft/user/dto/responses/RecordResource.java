@@ -15,11 +15,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class ScreenResource {
-	String screenName;
-	String screenDisplayName;
-	String screenTitle;
-	String screenAccess; // R, RW, W
-	RecordResource hdrResource;
-	List<RecordResource> dtlResources;
+public class RecordResource {
+	String recordName;
+	String recordDisplayName;
+	String listUrl;
+	String getRecordUrl;
+	String addRecordUrl;
+	String updateRecordUrl;
+	String deleteRecordUrl;
+	List<FieldResource> fieldList;
+	List<String> searchFieldList;
+	List<String> listDisplayFieldList;
+	List<String> displayRecordFieldList;
+	List<String> addRecordFieldList;
+	List<String> updateRecordFieldList;
 }

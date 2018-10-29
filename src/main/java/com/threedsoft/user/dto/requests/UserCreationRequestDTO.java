@@ -23,12 +23,11 @@ public class UserCreationRequestDTO extends WMSRequestDTO{
 	String firstName;
 	String lastName;
 	String middleName;
-	String roleName;
 	String addr1;
 	String addr2;
 	String addr3;
 	String city;
-	String State;
+	String state;
 	String country;
 	String zipCode;
 	String locale;
