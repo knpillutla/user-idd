@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 public class RecordResource {
 	String recordName;
 	String recordDisplayName;
+	String searchUrl;
 	String listUrl;
 	String getRecordUrl;
 	String addRecordUrl;
