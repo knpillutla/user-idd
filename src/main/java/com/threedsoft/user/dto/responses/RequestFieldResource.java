@@ -16,28 +16,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class FieldResource {
+public class RequestFieldResource {
 	String fieldName;
 	String fieldDisplayName;
-	String disableField;
-	String hideField;
 	String fieldDataType;
 	String fieldLength;
-	String allowedValues; //dropdown list of values
-	String displayOptions; //add,update,list,delete
-	String fieldType;
-	String defaultValue; //default value for add
-
-	public FieldResource(String fieldName, String fieldDisplayName, String disableField, String hideField,
-			String fieldDataType, String fieldLength, String allowedValues, String displayOptions) {
+	String fieldType; // list,single value
+	String promptForInput; //Y,N
+	
+	public RequestFieldResource(String fieldName, String fieldType, String promptForInput) {
+		this.fieldName=fieldName;
+		this.fieldType=fieldType;
+		this.promptForInput=promptForInput;
+	}
+	public RequestFieldResource(String fieldName, String displayName, String fieldType, String promptForInput) {
 		this.fieldName=fieldName;
 		this.fieldDisplayName=fieldDisplayName;
-		this.disableField=disableField;
-		this.hideField=hideField;
-		this.fieldDataType=fieldDataType;
-		this.fieldLength=fieldLength;
-		this.allowedValues=allowedValues;
-		this.displayOptions=displayOptions;
-		this.fieldType="text";
+		this.fieldType=fieldType;
+		this.promptForInput=promptForInput;
 	}
 }

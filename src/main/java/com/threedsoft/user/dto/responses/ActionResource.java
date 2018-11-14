@@ -15,20 +15,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class RecordResource {
-	String recordName;
-	String recordDisplayName;
-	String searchUrl;
-	String listUrl;
-	String getRecordUrl;
-	String addRecordUrl;
-	String updateRecordUrl;
-	String deleteRecordUrl;
-	List<FieldResource> fieldList;
-	List<String> searchFieldList;
-	List<String> listDisplayFieldList;
-	List<String> displayRecordFieldList;
-	List<String> addRecordFieldList;
-	List<String> updateRecordFieldList;
-	List<ActionResource> actionResourceList;
+public class ActionResource<T,K> {
+	String actionName;
+	String actionDisplayName;
+	String actionUrl;
+	List<RequestFieldResource> requestFieldList;
+	List<FieldResource> responseFieldList;
 }
