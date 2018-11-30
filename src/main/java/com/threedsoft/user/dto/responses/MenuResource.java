@@ -1,6 +1,5 @@
 package com.threedsoft.user.dto.responses;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -18,5 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MenuResource {
 	String menuName;
+	String menuType; //RF,Maintenance
 	List<ScreenResource> screenResourceList;
+	List<RFScreenResource> rfScreenResourceList;
 }

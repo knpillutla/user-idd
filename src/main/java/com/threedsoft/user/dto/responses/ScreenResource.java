@@ -21,6 +21,5 @@ public class ScreenResource {
 	String screenTitle;
 	String screenAccess; // R, RW, W
 	String screenType; //maintenance, rf
-	RecordResource hdrResource;
-	List<RecordResource> dtlResources;
+	DataResource dataResource;
 }
