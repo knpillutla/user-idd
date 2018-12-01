@@ -1,6 +1,5 @@
 package com.threedsoft.user.dto.responses;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -37,4 +36,5 @@ public class UserResourceDTO  extends WMSResourceDTO{
 	String locale;
 	String userId;
 	List<MenuResource> menuResourceList;
+	DashboardScreenResource dashboardResource;
 }
