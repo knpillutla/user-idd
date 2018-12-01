@@ -1,5 +1,6 @@
 package com.threedsoft.user.dto.responses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class DashboardScreenResource extends ScreenResource{
-	List<DashboardTileResource> tiles;
+	List<DashboardTileResource> tiles = new ArrayList();
 	public DashboardScreenResource(String screenName, String screenDisplayName, String screenTitle, 
 			String screenAccess) {
 		super(screenName, screenDisplayName, screenTitle, screenAccess, "dashboard", null);
