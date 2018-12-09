@@ -31,6 +31,7 @@ public class DataResource {
 	//String addRecordFields;
 	//String editRecordFields;
 	List<ActionResource> recordActionList;
+	DataResource primaryDtlResource;
 	List<DataResource> dtlResources;
 	List<AddFieldResource> addResourceFieldList;
 	List<ViewEditFieldResource> viewResourceFieldList;

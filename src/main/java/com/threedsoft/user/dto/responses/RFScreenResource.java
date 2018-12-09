@@ -1,6 +1,5 @@
 package com.threedsoft.user.dto.responses;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -16,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class RFScreenResource {
+public class RFScreenResource extends ScreenResource{
 	String screenName;
 	String screenDescription;
 	String screenAccessLevel;
@@ -25,4 +24,12 @@ public class RFScreenResource {
 	int heightOfScreen; // total number of lines including empty lines
 	List<RFFieldResource> rfFieldResourceList;
 	RFButtonResource buttonResource;
+	
+	public RFScreenResource(String screenName, String screenDisplayName, String screenTitle, String screenAccess,
+			int emptyLinesBetweenFieldResources, int widthOfScreen, int heightOfScreen) {
+		super(screenName,screenDisplayName, screenTitle, screenAccess, "RF", null);
+		this.emptyLinesBetweenFieldResources=emptyLinesBetweenFieldResources;
+		this.widthOfScreen=widthOfScreen;
+		this.heightOfScreen=heightOfScreen;
+	}
 }
