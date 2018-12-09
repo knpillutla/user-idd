@@ -25,7 +25,7 @@ public class DataResource {
 	String updateRecordUrl;
 	String deleteRecordUrl;
 	List<FieldResource> fieldList;
-	String searchFields;
+	List<SearchFieldResource> searchFieldList;
 	String listFields;
 	//String viewFields;
 	//String addRecordFields;

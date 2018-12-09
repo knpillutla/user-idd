@@ -13,10 +13,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class SearchFieldResource {
+public class SearchFieldResource{
 	String fieldName;
-	String disableField;
 	String hideField;
-	String defaultValue; //default value for add
+	Object defaultValue; //default value for add
 	
+	public static SearchFieldResource createHiddenFieldWithDefaultValue(String fieldName, Object defaultValue) {
+		SearchFieldResource resource = new SearchFieldResource();
+		resource.fieldName = fieldName;
+		resource.hideField="Y";
+		resource.defaultValue=defaultValue;
+		return resource;
+	}
+	
+	public static SearchFieldResource createSearchField(String fieldName) {
+		SearchFieldResource resource = new SearchFieldResource();
+		resource.fieldName = fieldName;
+		resource.hideField="N";
+		return resource;
+	}	
 }
