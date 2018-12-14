@@ -18,14 +18,8 @@ public class AddFieldResource {
 	String disableField;
 	String hideField;
 	Object defaultValue; // generally used in add/edit
-	
-	public static AddFieldResource createDisabledFieldWithDefaultValue(String fieldName, Object defaultValue) {
-		AddFieldResource addFieldResource = new AddFieldResource();
-		addFieldResource.fieldName=fieldName;
-		addFieldResource.disableField="Y";
-		addFieldResource.defaultValue=defaultValue;
-		return addFieldResource;
-	}
+	String useValueFromHdr="N";
+	String hdrFieldName="";
 	
 	public static AddFieldResource createHiddenFieldWithDefaultValue(String fieldName, Object defaultValue) {
 		AddFieldResource addFieldResource = new AddFieldResource();
@@ -40,4 +34,12 @@ public class AddFieldResource {
 		addFieldResource.fieldName=fieldName;
 		return addFieldResource;
 	}
-}
+
+	public static AddFieldResource createHdrReferenceField(String fieldName, String hdrFieldName) {
+		AddFieldResource addFieldResource = new AddFieldResource();
+		addFieldResource.fieldName=fieldName;
+		addFieldResource.useValueFromHdr="Y";
+		addFieldResource.hdrFieldName=hdrFieldName;
+		addFieldResource.disableField="Y";
+		return addFieldResource;
+	}}

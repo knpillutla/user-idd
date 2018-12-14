@@ -27,8 +27,9 @@ public class FieldResource {
 	String allowedValues = ""; // dropdown list of values
 	String defaultValue = ""; // default value in the list of allowed values for edit
 	String primaryKeyFieldDtlFieldName;
-	String aliasFieldName;
 	String hiddenField;
+	private static String TEXT_FIELD="text";
+	private static String DROPDOWN_FIELD="dropdown";
 	public static FieldResource createField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
 		FieldResource fieldResource = new FieldResource();
 		fieldResource.fieldName = fieldName;
@@ -55,18 +56,17 @@ public class FieldResource {
 		fieldResource.fieldDisplayName = fieldDisplayName;
 		fieldResource.fieldDataType = fieldDataType;
 		fieldResource.fieldLength = fieldLength;
-		fieldResource.fieldType="dropdown";
+		fieldResource.fieldType=DROPDOWN_FIELD;
 		fieldResource.allowedValues=allowedValues;
 		fieldResource.defaultValue=defaultValue;
 		fieldResource.hiddenField = "N";
 		return fieldResource;
 	}
 
-	public static FieldResource createPrimaryField(String fieldName, String aliasFieldName, String fieldDisplayName, String fieldDataType,
+	public static FieldResource createPrimaryField(String fieldName, String fieldDisplayName, String fieldDataType,
 			String fieldLength) {
 		FieldResource fieldResource = new FieldResource();
 		fieldResource.fieldName = fieldName;
-		fieldResource.aliasFieldName=aliasFieldName;
 		fieldResource.fieldDisplayName = fieldDisplayName;
 		fieldResource.fieldDataType = fieldDataType;
 		fieldResource.fieldLength = fieldLength;
