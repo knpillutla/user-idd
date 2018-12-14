@@ -36,6 +36,7 @@ public class DataResource {
 	List<AddFieldResource> addResourceFieldList;
 	List<ViewEditFieldResource> viewResourceFieldList;
 	List<ViewEditFieldResource> editResourceFieldList;
+	String hdrDisplayFields;
 
 	public DataResource(String name, String displayName, String searchUrl, String listUrl, String addRecordUrl,
 			String updateRecordUrl, String deleteRecordUrl) {
