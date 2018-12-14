@@ -28,8 +28,21 @@ public class FieldResource {
 	String defaultValue = ""; // default value in the list of allowed values for edit
 	String primaryKeyFieldDtlFieldName;
 	String hiddenField;
+	String mandatoryField="N";
 	private static String TEXT_FIELD="text";
 	private static String DROPDOWN_FIELD="dropdown";
+	
+	public static FieldResource createMandotoryField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
+		FieldResource fieldResource = new FieldResource();
+		fieldResource.fieldName = fieldName;
+		fieldResource.fieldDisplayName = fieldDisplayName;
+		fieldResource.fieldDataType = fieldDataType;
+		fieldResource.fieldLength = fieldLength;
+		fieldResource.hiddenField = "N";
+		fieldResource.mandatoryField="Y";
+		return fieldResource;
+	}
+
 	public static FieldResource createField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
 		FieldResource fieldResource = new FieldResource();
 		fieldResource.fieldName = fieldName;
@@ -63,6 +76,21 @@ public class FieldResource {
 		return fieldResource;
 	}
 
+	public static FieldResource createMandatoryDropDownField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
+			String allowedValues, String defaultValue) {
+		FieldResource fieldResource = new FieldResource();
+		fieldResource.fieldName = fieldName;
+		fieldResource.fieldDisplayName = fieldDisplayName;
+		fieldResource.fieldDataType = fieldDataType;
+		fieldResource.fieldLength = fieldLength;
+		fieldResource.fieldType=DROPDOWN_FIELD;
+		fieldResource.allowedValues=allowedValues;
+		fieldResource.defaultValue=defaultValue;
+		fieldResource.hiddenField = "N";
+		fieldResource.mandatoryField="Y";
+		return fieldResource;
+	}
+
 	public static FieldResource createPrimaryField(String fieldName, String fieldDisplayName, String fieldDataType,
 			String fieldLength) {
 		FieldResource fieldResource = new FieldResource();
@@ -72,6 +100,7 @@ public class FieldResource {
 		fieldResource.fieldLength = fieldLength;
 		fieldResource.isPrimaryField = "Y";
 		fieldResource.hiddenField = "N";
+		fieldResource.mandatoryField="Y";
 		return fieldResource;
 	}
 }
