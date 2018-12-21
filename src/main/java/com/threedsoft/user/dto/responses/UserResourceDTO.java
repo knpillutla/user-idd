@@ -34,6 +34,9 @@ public class UserResourceDTO  extends WMSResourceDTO{
 	String country;
 	String zipCode;
 	String locale;
+	String theme;
+	String menuType;
+	String userType;
 	String userId;
 	List<MenuResource> menuResourceList;
 	DashboardScreenResource dashboardResource;

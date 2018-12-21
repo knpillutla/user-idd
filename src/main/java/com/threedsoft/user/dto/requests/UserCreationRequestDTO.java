@@ -32,5 +32,7 @@ public class UserCreationRequestDTO extends WMSRequestDTO{
 	String zipCode;
 	String locale;
 	String theme;
+	String menuType;
+	String userType;
 	String userId;
 }

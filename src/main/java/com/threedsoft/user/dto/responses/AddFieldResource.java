@@ -20,6 +20,7 @@ public class AddFieldResource {
 	Object defaultValue; // generally used in add/edit
 	String useValueFromHdr="N";
 	String hdrFieldName="";
+	String mandatoryField="N";
 	
 	public static AddFieldResource createHiddenFieldWithDefaultValue(String fieldName, Object defaultValue) {
 		AddFieldResource addFieldResource = new AddFieldResource();
@@ -29,7 +30,20 @@ public class AddFieldResource {
 		return addFieldResource;
 	}
 
-	public static AddFieldResource createTextField(String fieldName) {
+	public static AddFieldResource createDisabledField(String fieldName) {
+		AddFieldResource addFieldResource = new AddFieldResource();
+		addFieldResource.fieldName=fieldName;
+		addFieldResource.disableField="Y";
+		return addFieldResource;
+	}
+	public static AddFieldResource createMandatoryField(String fieldName) {
+		AddFieldResource addFieldResource = new AddFieldResource();
+		addFieldResource.fieldName=fieldName;
+		addFieldResource.mandatoryField="Y";
+		return addFieldResource;
+	}
+	
+	public static AddFieldResource createField(String fieldName) {
 		AddFieldResource addFieldResource = new AddFieldResource();
 		addFieldResource.fieldName=fieldName;
 		return addFieldResource;

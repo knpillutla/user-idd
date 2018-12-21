@@ -18,10 +18,18 @@ public class ViewEditFieldResource {
 	String disableField;
 	String hideField;
 	String defaultValue;
+	String mandatoryField="N";
 	
-	public static ViewEditFieldResource createTextField(String fieldName) {
+	public static ViewEditFieldResource createField(String fieldName) {
 		ViewEditFieldResource editFieldResource = new ViewEditFieldResource();
 		editFieldResource.fieldName=fieldName;
+		return editFieldResource;
+	}
+
+	public static ViewEditFieldResource createMandatoryField(String fieldName) {
+		ViewEditFieldResource editFieldResource = new ViewEditFieldResource();
+		editFieldResource.fieldName=fieldName;
+		editFieldResource.mandatoryField="Y";
 		return editFieldResource;
 	}
 
