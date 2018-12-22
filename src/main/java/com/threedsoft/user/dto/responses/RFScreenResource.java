@@ -20,7 +20,7 @@ public class RFScreenResource extends ScreenResource{
 	int widthOfScreen; // num of characters wide
 	int heightOfScreen; // total number of lines including empty lines
 	List<RFFieldResource> rfFieldResourceList;
-	RFButtonResource buttonResource;
+	List<RFButtonResource> buttonResources;
 	
 	public RFScreenResource(String screenName, String screenDisplayName, String screenTitle, String screenAccess,
 			int emptyLinesBetweenFieldResources, int widthOfScreen, int heightOfScreen) {
