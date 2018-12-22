@@ -21,8 +21,8 @@ public class RFFieldResource {
 	String hideField = "N";
 	Object defaultValue;
 	String fieldLength = "20";
-	String userInputNeeded="N"; // Y/N
-	String dataUrl="";
+//	String userInputNeeded="N"; // Y/N
+	String dataTriggerUrl="";
 	String validateInputWithField=""; // field name from the response of dataURL to validate the entered value
 	String validationFailedErrorMsg="";
 	String actionUrl=""; // if exists and not null, then prompt for confirmation to execute this.
@@ -39,6 +39,8 @@ public class RFFieldResource {
 		rfFieldResource.defaultValue = defaultValue;
 		rfFieldResource.fieldType="label";
 		rfFieldResource.hideField="Y";
+		rfFieldResource.fieldDataType = "string";
+		rfFieldResource.fieldLength="20";
 		return rfFieldResource;
 	}
 
@@ -69,7 +71,7 @@ public class RFFieldResource {
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.userInputNeeded = "Y";
+		rfFieldResource.fieldType="text";
 		rfFieldResource.validateInputWithField = validateInputWithField;
 		rfFieldResource.validationFailedErrorMsg = validationFailedErrorMsg;
 		return rfFieldResource;
@@ -82,22 +84,35 @@ public class RFFieldResource {
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.userInputNeeded = "Y";
-		rfFieldResource.dataUrl = dataUrl;
+		rfFieldResource.fieldType="text";
+		rfFieldResource.dataTriggerUrl = dataUrl;
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createDataTriggerHiddenField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
+	public static RFFieldResource createDataTriggerHiddenLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
 			String dataUrl, String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.userInputNeeded = "N";
 		rfFieldResource.hideField="Y";
-		rfFieldResource.dataUrl = dataUrl;
+		rfFieldResource.fieldType="label";
+		rfFieldResource.dataTriggerUrl = dataUrl;
+		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
+		return rfFieldResource;
+	}
+
+	public static RFFieldResource createDataTriggerLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
+			String dataUrl, String dataTriggerErrorMsg) {
+		RFFieldResource rfFieldResource = new RFFieldResource();
+		rfFieldResource.fieldName = fieldName;
+		rfFieldResource.fieldDisplayName = fieldDisplayName;
+		rfFieldResource.fieldDataType = fieldDataType;
+		rfFieldResource.fieldLength = fieldLength;
+		rfFieldResource.dataTriggerUrl = dataUrl;
+		rfFieldResource.fieldType="label";
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
@@ -110,7 +125,7 @@ public class RFFieldResource {
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.userInputNeeded = "Y";
+		rfFieldResource.fieldType="text";
 		rfFieldResource.validateInputWithField = validateInputWithField;
 		rfFieldResource.validationFailedErrorMsg = validationFailedErrorMsg;
 		rfFieldResource.actionUrl = actionUrl;
