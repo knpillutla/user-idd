@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 public class RFFieldResource {
 	String fieldName="";
 	String fieldDisplayName="";
-	String fieldType=""; // label,text,hidden
+	String fieldType="label"; // label,text
 	String fieldDataType = "string";
 	String hideField = "N";
-	Object defaultValue;;
+	Object defaultValue;
 	String fieldLength = "20";
 	String userInputNeeded="N"; // Y/N
 	String dataUrl="";
@@ -37,7 +37,8 @@ public class RFFieldResource {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.defaultValue = defaultValue;
-		rfFieldResource.fieldType="hidden";
+		rfFieldResource.fieldType="label";
+		rfFieldResource.hideField="Y";
 		return rfFieldResource;
 	}
 

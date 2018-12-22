@@ -16,9 +16,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class RFScreenResource extends ScreenResource{
-	String screenName;
-	String screenDescription;
-	String screenAccessLevel;
 	int emptyLinesBetweenFieldResources;
 	int widthOfScreen; // num of characters wide
 	int heightOfScreen; // total number of lines including empty lines
