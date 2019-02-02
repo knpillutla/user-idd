@@ -104,6 +104,21 @@ public class RFFieldResource {
 		return rfFieldResource;
 	}
 
+	public static RFFieldResource createDataTriggerStickyTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
+			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
+		RFFieldResource rfFieldResource = new RFFieldResource();
+		rfFieldResource.fieldName = fieldName;
+		rfFieldResource.fieldDisplayName = fieldDisplayName;
+		rfFieldResource.fieldDataType = fieldDataType;
+		rfFieldResource.fieldLength = fieldLength;
+		rfFieldResource.fieldType="text";
+		rfFieldResource.dataTriggerUrl = dataUrl;
+		rfFieldResource.dataTriggerMethod=dataUrlRestMethod;
+		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
+		rfFieldResource.stickyField="Y";
+		return rfFieldResource;
+	}
+
 	public static RFFieldResource createDataTriggerHiddenLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
 			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
@@ -149,4 +164,18 @@ public class RFFieldResource {
 		rfFieldResource.continueInNextScreen = continueInNextScreen;
 		return rfFieldResource;
 	}
-}
+
+	public static RFFieldResource createActionTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
+			String actionUrl,
+			String inputListToActionUrl, String continueInNextScreen) {
+		RFFieldResource rfFieldResource = new RFFieldResource();
+		rfFieldResource.fieldName = fieldName;
+		rfFieldResource.fieldDisplayName = fieldDisplayName;
+		rfFieldResource.fieldDataType = fieldDataType;
+		rfFieldResource.fieldLength = fieldLength;
+		rfFieldResource.fieldType="text";
+		rfFieldResource.actionUrl = actionUrl;
+		rfFieldResource.inputListToActionUrl = inputListToActionUrl;
+		rfFieldResource.continueInNextScreen = continueInNextScreen;
+		return rfFieldResource;
+	}}

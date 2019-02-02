@@ -27,9 +27,14 @@ public class DataResource {
 	List<FieldResource> fieldList;
 	List<SearchFieldResource> searchFieldList;
 	String listFields;
-	//String viewFields;
-	//String addRecordFields;
-	//String editRecordFields;
+	String addHttpMethod = "POST";
+	String updateHttpMethod = "PUT";
+	String deleteHttpMethod = "DELETE";
+	String listHttpMethod = "GET";
+	String searchHttpMethod = "GET";
+	// String viewFields;
+	// String addRecordFields;
+	// String editRecordFields;
 	List<ActionResource> recordActionList;
 	DataResource primaryDtlResource;
 	List<DataResource> dtlResources;
