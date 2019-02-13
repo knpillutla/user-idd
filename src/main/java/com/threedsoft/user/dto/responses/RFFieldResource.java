@@ -14,149 +14,189 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class RFFieldResource {
-	String fieldName="";
-	String fieldDisplayName="";
-	String fieldType="label"; // label,text
+	String fieldName = "";
+	String fieldDisplayName = "";
+	String fieldType = "label"; // label,text
 	String fieldDataType = "string";
 	String hideField = "N";
 	Object defaultValue;
 	String fieldLength = "20";
 //	String userInputNeeded="N"; // Y/N
-	String dataTriggerUrl="";
-	String dataTriggerMethod="GET";
-	String validateInputWithField=""; // field name from the response of dataURL to validate the entered value
-	String validationFailedErrorMsg="";
-	String actionUrl=""; // if exists and not null, then prompt for confirmation to execute this.
+	String dataTriggerUrl = "";
+	String dataTriggerMethod = "GET";
+	String validateInputWithField = ""; // field name from the response of dataURL to validate the entered value
+	String validationFailedErrorMsg = "";
+	String actionUrl = ""; // if exists and not null, then prompt for confirmation to execute this.
 	String dataTriggerErrorMsg = "";
 	// this field qualifies to continue on to next screen.ex:-when entered qty <
 	// actual qty and tote is full, they may want to end the tote and continue with
 	// remaining qty in to a new tote
-	String continueInNextScreen="N";
-	String inputListToActionUrl="";
-	String stickyField="N";
+	String continueInNextScreen = "N";
+	String inputListToActionUrl = "";
+	String stickyField = "N";
 
 	public static RFFieldResource createHiddenField(String fieldName, Object defaultValue) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.defaultValue = defaultValue;
-		rfFieldResource.fieldType="label";
-		rfFieldResource.hideField="Y";
+		rfFieldResource.fieldType = "label";
+		rfFieldResource.hideField = "Y";
 		rfFieldResource.fieldDataType = "string";
-		rfFieldResource.fieldLength="20";
+		rfFieldResource.fieldLength = "20";
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
+	public static RFFieldResource createLabelField(String fieldName, String fieldDisplayName, String fieldDataType,
+			String fieldLength) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="label";
+		rfFieldResource.fieldType = "label";
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
+	public static RFFieldResource createTextField(String fieldName, String fieldDisplayName, String fieldDataType,
+			String fieldLength) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.fieldType = "text";
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createStickyTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength) {
+	public static RFFieldResource createStickyTextField(String fieldName, String fieldDisplayName, String fieldDataType,
+			String fieldLength) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
-		rfFieldResource.stickyField="Y";
+		rfFieldResource.fieldType = "text";
+		rfFieldResource.stickyField = "Y";
 		return rfFieldResource;
 	}
-	
-	public static RFFieldResource createTextFieldWithValidation(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String validateInputWithField, String validationFailedErrorMsg) {
+
+	public static RFFieldResource createTextFieldWithValidation(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String validateInputWithField, String validationFailedErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.validateInputWithField = validateInputWithField;
 		rfFieldResource.validationFailedErrorMsg = validationFailedErrorMsg;
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createDataTriggerTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
+	public static RFFieldResource createDataTriggerTextField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.dataTriggerUrl = dataUrl;
-		rfFieldResource.dataTriggerMethod=dataUrlRestMethod;
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createDataTriggerStickyTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
+	public static RFFieldResource createDataTriggerStickyTextField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.dataTriggerUrl = dataUrl;
-		rfFieldResource.dataTriggerMethod=dataUrlRestMethod;
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
-		rfFieldResource.stickyField="Y";
+		rfFieldResource.stickyField = "Y";
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createDataTriggerHiddenLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
+	public static RFFieldResource createDataTriggerStickyTextField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg, String inputListToUrl) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.hideField="Y";
-		rfFieldResource.fieldType="label";
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.dataTriggerUrl = dataUrl;
-		rfFieldResource.dataTriggerMethod=dataUrlRestMethod;
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
+		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
+		rfFieldResource.stickyField = "Y";
+		rfFieldResource.inputListToActionUrl = inputListToUrl;
+		return rfFieldResource;
+	}
+
+	public static RFFieldResource createDataTriggerHiddenLabelField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg) {
+		RFFieldResource rfFieldResource = new RFFieldResource();
+		rfFieldResource.fieldName = fieldName;
+		rfFieldResource.fieldDisplayName = fieldDisplayName;
+		rfFieldResource.fieldDataType = fieldDataType;
+		rfFieldResource.fieldLength = fieldLength;
+		rfFieldResource.hideField = "Y";
+		rfFieldResource.fieldType = "label";
+		rfFieldResource.dataTriggerUrl = dataUrl;
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createDataTriggerLabelField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String dataUrl, String dataUrlRestMethod, String dataTriggerErrorMsg) {
+	public static RFFieldResource createDataTriggerLabelField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
 		rfFieldResource.dataTriggerUrl = dataUrl;
-		rfFieldResource.dataTriggerMethod=dataUrlRestMethod;
-		rfFieldResource.fieldType="label";
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
+		rfFieldResource.fieldType = "label";
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createActionTextFieldWithValidation(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String validateInputWithField, String validationFailedErrorMsg, String actionUrl,
-			String inputListToActionUrl, String continueInNextScreen) {
+	public static RFFieldResource createDataTriggerLabelField(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String dataTriggerErrorMsg, String inputListToActionUrl) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.dataTriggerUrl = dataUrl;
+		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
+		rfFieldResource.fieldType = "label";
+		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
+		rfFieldResource.inputListToActionUrl = inputListToActionUrl;
+		return rfFieldResource;
+	}
+
+	public static RFFieldResource createActionTextFieldWithValidation(String fieldName, String fieldDisplayName,
+			String fieldDataType, String fieldLength, String validateInputWithField, String validationFailedErrorMsg,
+			String actionUrl, String inputListToActionUrl, String continueInNextScreen) {
+		RFFieldResource rfFieldResource = new RFFieldResource();
+		rfFieldResource.fieldName = fieldName;
+		rfFieldResource.fieldDisplayName = fieldDisplayName;
+		rfFieldResource.fieldDataType = fieldDataType;
+		rfFieldResource.fieldLength = fieldLength;
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.validateInputWithField = validateInputWithField;
 		rfFieldResource.validationFailedErrorMsg = validationFailedErrorMsg;
 		rfFieldResource.actionUrl = actionUrl;
@@ -165,17 +205,17 @@ public class RFFieldResource {
 		return rfFieldResource;
 	}
 
-	public static RFFieldResource createActionTextField(String fieldName, String fieldDisplayName, String fieldDataType, String fieldLength,
-			String actionUrl,
-			String inputListToActionUrl, String continueInNextScreen) {
+	public static RFFieldResource createActionTextField(String fieldName, String fieldDisplayName, String fieldDataType,
+			String fieldLength, String actionUrl, String inputListToActionUrl, String continueInNextScreen) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
 		rfFieldResource.fieldDisplayName = fieldDisplayName;
 		rfFieldResource.fieldDataType = fieldDataType;
 		rfFieldResource.fieldLength = fieldLength;
-		rfFieldResource.fieldType="text";
+		rfFieldResource.fieldType = "text";
 		rfFieldResource.actionUrl = actionUrl;
 		rfFieldResource.inputListToActionUrl = inputListToActionUrl;
 		rfFieldResource.continueInNextScreen = continueInNextScreen;
 		return rfFieldResource;
-	}}
+	}
+}

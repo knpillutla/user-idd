@@ -20,5 +20,18 @@ public class RFButtonResource {
 	String actionUrl;
 	String inputFieldListToActionUrl;
 	String resetFieldAfterConfirm;
-	String exitScreen; //y,n
+	String exitScreen; // y,n
+	String httpMethod;
+
+	public RFButtonResource(String name, String displayName, String confirmationMsg, String actionUrl,
+			String inputFieldListToActionUrl, String resetFieldAfterConfirm, String exitScreen) {
+		this.name = name;
+		this.displayName = displayName;
+		this.confirmationMsg = confirmationMsg;
+		this.actionUrl = actionUrl;
+		this.inputFieldListToActionUrl = inputFieldListToActionUrl;
+		this.resetFieldAfterConfirm = resetFieldAfterConfirm;
+		this.exitScreen = exitScreen;
+		this.httpMethod = "POST";
+	}
 }
