@@ -94,7 +94,7 @@ public class RFFieldResource {
 	}
 
 	public static RFFieldResource createDataTriggerTextField(String fieldName, String fieldDisplayName,
-			String fieldDataType, String fieldLength, String dataUrl, String dataUrlRestMethod,
+			String fieldDataType, String fieldLength, String dataUrl, String dataTriggerUrlMethod,
 			String dataTriggerErrorMsg) {
 		RFFieldResource rfFieldResource = new RFFieldResource();
 		rfFieldResource.fieldName = fieldName;
@@ -103,7 +103,7 @@ public class RFFieldResource {
 		rfFieldResource.fieldLength = fieldLength;
 		rfFieldResource.fieldType = "text";
 		rfFieldResource.dataTriggerUrl = dataUrl;
-		rfFieldResource.dataTriggerMethod = dataUrlRestMethod;
+		rfFieldResource.dataTriggerMethod = dataTriggerUrlMethod;
 		rfFieldResource.dataTriggerErrorMsg = dataTriggerErrorMsg;
 		return rfFieldResource;
 	}
